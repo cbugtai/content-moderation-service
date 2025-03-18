@@ -1,8 +1,11 @@
 import express, { Express, Request, Response } from "express";
+import helmet from "helmet";
 import moderationRoutes from "./api/v1/routes/moderationRoutes";
 
 const app: Express = express();
 app.use(express.json());
+
+app.use(helmet());
 
 /**
  * Mount moderation routes on /api/v1/moderation
