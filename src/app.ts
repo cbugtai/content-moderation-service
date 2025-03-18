@@ -1,11 +1,12 @@
 import express, { Express, Request, Response } from "express";
-import helmet from "helmet";
+import { helmetConfig } from "./api/v1/middleware/helmet";
 import moderationRoutes from "./api/v1/routes/moderationRoutes";
 
 const app: Express = express();
 app.use(express.json());
 
-app.use(helmet());
+//Helmet Implementation
+app.use(helmetConfig);
 
 /**
  * Mount moderation routes on /api/v1/moderation
