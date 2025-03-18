@@ -1,8 +1,11 @@
 import express, { Express, Request, Response } from "express";
+import cors from "cors";
 import moderationRoutes from "./api/v1/routes/moderationRoutes";
 
 const app: Express = express();
 app.use(express.json());
+
+app.use(cors());
 
 /**
  * Mount moderation routes on /api/v1/moderation
