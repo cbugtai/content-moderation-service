@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const moderationController_1 = require("../controllers/moderationController");
+const router = (0, express_1.Router)();
+router.get("/post/:id", moderationController_1.getPostById);
+router.post("/post/:id/moderate", moderationController_1.moderatePost);
+router.get("/user/:id/profile", moderationController_1.getUserProfile);
+router.post("/user/:id/flag", moderationController_1.flagUser);
+router.get("/content/flags/stats", moderationController_1.getFlaggedContentStats);
+exports.default = router;
